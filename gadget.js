@@ -1,6 +1,6 @@
  function orderOnWhatsApp(productName, price) {
             // Replace with your WhatsApp number
-            const phoneNumber = "919558533117";
+            const phoneNumber = "917383234749";
             
             // Create the order message
             const message = `I want to order:\n\n*${productName}*\nPrice: ₹${price}\n\nPlease confirm availability.`;
@@ -29,4 +29,5 @@
         // Load products for this category
         document.addEventListener('DOMContentLoaded', function() {
             loadCategoryProducts(category);
+
         });
