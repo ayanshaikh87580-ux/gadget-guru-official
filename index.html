@@ -1,157 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#e60000">
-    <title>Mobile Accessories - Gadget Guru Official</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Guru - Web App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .search-bar {
+            display: flex;
+            margin: 1rem 0;
+        }
+        
+        .search-bar input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            flex-grow: 1;
+        }
+        
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-info {
+            padding: 1rem;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .add-to-cart {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">Gadget Guru Official</div>
-        <div class="tagline">Premium Mobile Accessories & Gadgets</div>
+        <div class="logo">Gadget Guru</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#"><i class="fas fa-user"></i></a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="delivery-banner">
-  <span class="delivery-icon">🚚</span>All India Delivery | 100% Genuine Products
-</div>
-    <nav>
-        <ul>
-           
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="about.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="category-header">
-        <h1 class="category-title">Mobile Accessories</h1>
-        <div class="breadcrumb">
-            <a href="index.html">Home</a>
-            <span>/</span>
-            <a href="#">Categories</a>
-            <span>/</span>
-            <a href="#">Mobile Accessories</a>
-        </div>
-    </div>
     
-    <div class="container">
-        
-        
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="charger.jpg.jpg" alt="charger">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Samsung fast charger</h3>
-                    <div class="product-price">₹599</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('Samsung Fast charger', '599')">Order on WhatsApp</a>
-                </div>
-            </div>
-            
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="mz.jpg.jpg" alt="Power Bank">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">MZ M415sp speaker</h3>
-                    <div class="product-price">₹699</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('MZ m415sp speaker', '699')">Order on WhatsApp</a>
-                </div>
-            </div>
-            
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="realme.jpg.jpg" alt="Phone Case">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Realme Buds T200 Lite</h3>
-                    <div class="product-price">₹499</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('Realme buds T200 Lite', '499')">Order on WhatsApp</a>
-                </div>
-            </div>
-            
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="nackband.jpg.jpg" alt="Smart Watch">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Oneplus Bullet Wireless</h3>
-                    <div class="product-price">₹899</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('Oneplus Bullet Wireless', '999')">Order on WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="smart.jpg.jpg" alt="Wireless Headphones">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Smart watch ultra</h3>
-                    <div class="product-price">₹1,099</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('Smart watch ultra', '1099')">Order on WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="bx.jpg.jpg" alt="Car Phone Holder">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">BX-39 Bluetooth Speaker</h3>
-                    <div class="product-price">₹499</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('BX-39 Bluetooth Speaker', '4	99')">Order on WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="selfy.jpg.jpg" alt="Screen Protector">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Selfie Stick Wireless</h3>
-                    <div class="product-price">₹599</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('Selfie Stick Wireless', '599')">Order on WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="hmd.jpg.jpg" alt="USB Cable">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">HMD 105 Mobile</h3>
-                    <div class="product-price">₹1599</div>
-                    <a href="#" class="btn" onclick="orderOnWhatsApp('HMD 105 Mobile', '1599')">Order on WhatsApp</a>
-                </div>
-            </div>
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for gadgets...">
+            <button><i class="fas fa-search"></i> Search</button>
         </div>
-
-       
+        
+        <div class="product-grid">
+            <!-- Product cards will be dynamically inserted here -->
+        </div>
+    </main>
+    
     <footer>
-        <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="about.html">Privacy Policy</a>
-            <a href="about.html">Terms & Conditions</a>
-        </div>
-        <div class="copyright">
-            &copy; 2025 Gadget Wale Official. All Rights Reserved.
-        </div>
+        <p>&copy; 2023 Gadget Guru. All rights reserved.</p>
     </footer>
-
-    <script src="gadget.js">
-       
+    
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                title: "Wireless Earbuds",
+                price: "$59.99",
+                description: "High-quality wireless earbuds with noise cancellation."
+            },
+            {
+                id: 2,
+                title: "Smart Watch",
+                price: "$129.99",
+                description: "Track your fitness and stay connected."
+            },
+            {
+                id: 3,
+                title: "Bluetooth Speaker",
+                price: "$39.99",
+                description: "Portable speaker with 12-hour battery life."
+            },
+            {
+                id: 4,
+                title: "Phone Stand",
+                price: "$14.99",
+                description: "Adjustable stand for phones and tablets."
+            },
+            {
+                id: 5,
+                title: "Wireless Charger",
+                price: "$24.99",
+                description: "Fast charging pad for Qi-enabled devices."
+            },
+            {
+                id: 6,
+                title: "VR Headset",
+                price: "$199.99",
+                description: "Immersive virtual reality experience."
+            }
+        ];
+        
+        // Function to render products
+        function renderProducts() {
+            const productGrid = document.querySelector('.product-grid');
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x200?text=${encodeURIComponent(product.title)}" alt="${product.title}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">${product.title}</div>
+                        <div class="product-price">${product.price}</div>
+                        <p>${product.description}</p>
+                        <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    </div>
+                `;
+                
+                productGrid.appendChild(productCard);
+            });
+        }
+        
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            
+            // Add event listeners for add to cart buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = e.target.getAttribute('data-id');
+                    alert(`Added product ${productId} to cart`);
+                    // Here you would typically add to a cart array or make an API call
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
-
-
